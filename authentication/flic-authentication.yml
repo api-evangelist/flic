@@ -1,0 +1,32 @@
+generated: '2026-07-19'
+method: searched
+source: https://github.com/50ButtonsEach/flic-cloud-buttons-documentation
+docs: https://github.com/50ButtonsEach/flic2-documentation
+summary:
+  types: [jwt-signed-webhook, ble-pairing]
+  note: >-
+    Flic has no OAuth/REST API-key surface. Two authentication models are in
+    play: (1) SDK/protocol access to buttons is authenticated via Bluetooth Low
+    Energy pairing between the Flic 2 button and the host app/hub (the pairing
+    identity is what the flic2lib SDKs establish); (2) Cloud Buttons webhook
+    deliveries are authenticated to the receiver by a signed JWT.
+schemes:
+  - name: cloud-buttons-jwt
+    type: jws
+    scheme: JWT
+    algorithm: ES256
+    key_type: ECDSA P-256
+    direction: inbound-webhook
+    verification: >-
+      The receiving endpoint verifies the ES256-signed JWT using Flic's public
+      key (published in JWK/PEM/DER/raw). Claims carry the button uuid, serial,
+      battery, pressedAt, and click type.
+    sources: [asyncapi/flic-cloud-buttons-webhooks.yml]
+  - name: ble-pairing
+    type: device-pairing
+    scheme: Bluetooth Low Energy
+    direction: sdk-to-button
+    verification: >-
+      flic2lib (iOS/Android/C/Linux/Windows) establishes a paired, encrypted BLE
+      session with the button; there is no server-side token exchange.
+    sources: [packages/flic-packages.yml]
