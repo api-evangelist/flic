@@ -1,0 +1,50 @@
+generated: '2026-07-19'
+method: searched
+source: https://github.com/50ButtonsEach/flic-cloud-buttons-documentation
+spec_type: Webhooks
+service: cloud-buttons
+summary: >-
+  Flic Cloud Buttons deliver physical button presses to a customer-configured
+  HTTP endpoint. When a button is pressed, the event is proxied through Flic
+  servers (to hide the real endpoint) and delivered as an HTTP POST with a JSON
+  body carrying a single signed JWT. The receiver verifies the JWT and reads the
+  press details from its claims.
+delivery:
+  transport: http
+  method: POST
+  content_type: application/json
+  body_shape: '{"token": "<JWT>"}'
+  endpoint: customer-configured webhook URL (set per button in the Flic Device Manager)
+  proxied: true
+authentication:
+  scheme: JWT (JWS)
+  algorithm: ES256
+  key_type: ECDSA P-256
+  verification: >-
+    Verify the JWT signature with Flic's published public key, available in JWK,
+    PEM, DER and raw formats in the Cloud Buttons documentation.
+payload_claims:
+  - name: uuid
+    description: The button's UUID.
+  - name: serial_number
+    description: The button's serial number.
+  - name: battery
+    description: Battery status of the button.
+  - name: pressedAt
+    description: Timestamp of the press.
+  - name: click_type
+    description: One of click, double_click, or hold.
+events:
+  - name: click
+    description: Single click.
+  - name: double_click
+    description: Double click.
+  - name: hold
+    description: Button held.
+configuration:
+  manager: Flic Device Manager
+  per_button_fields:
+    - icon URL
+    - webhook endpoint URL
+    - webview URL
+    - action type (CLOUD or CLOUD_LOCATION, the latter adding geolocation)

@@ -1,0 +1,35 @@
+# Flic
+
+> Flic makes wireless smart buttons and dials (Flic Button, Flic Twist, Flic Duo) plus the Flic Hub that control smart-home devices, lights, music and cloud services. The developer surface is SDK- and protocol-centric (BLE / the open Flic 2 protocol) with a webhook-based "Cloud Buttons" surface — there is no REST/OAuth API. Flic is backed by 500 Global.
+
+## Developer surfaces
+
+- [Flic 2 & Flic Duo documentation](https://github.com/50ButtonsEach/flic2-documentation): Protocol specifications, technical overview, and SDK tutorials.
+- [Flic Cloud Buttons documentation](https://github.com/50ButtonsEach/flic-cloud-buttons-documentation): No-code webhook integration — button presses delivered as HTTP POST with a signed JWT (ES256).
+- [Flic Hub SDK](https://flic.io/flic-hub-sdk): JavaScript runtime on the Flic Hub with loadable modules (MQTT, OSC).
+- [Integrations directory](https://flic.io/applications): 1,000+ compatible devices and services.
+
+## SDKs (first-party, under github.com/50ButtonsEach)
+
+- [flic2lib-ios](https://github.com/50ButtonsEach/flic2lib-ios): iOS framework for Flic 2 / Flic Duo.
+- [flic2lib-android](https://github.com/50ButtonsEach/flic2lib-android): Android SDK (JitPack: com.github.50ButtonsEach:flic2lib-android:2.+).
+- [flic2lib-c-module](https://github.com/50ButtonsEach/flic2lib-c-module): C module for the Flic 2 protocol (embedded).
+- [fliclib-linux-hci](https://github.com/50ButtonsEach/fliclib-linux-hci): Linux SDK (fliclib) with Python/Node/C# clients.
+- [fliclib-windows](https://github.com/50ButtonsEach/fliclib-windows): Windows SDK.
+- [flic-hub-sdk-mqtt-js](https://github.com/50ButtonsEach/flic-hub-sdk-mqtt-js): MQTT module for the Flic Hub SDK.
+- [flic-hub-sdk-osc-js](https://github.com/50ButtonsEach/flic-hub-sdk-osc-js): OSC module for the Flic Hub SDK.
+
+## Repo artifacts
+
+- [Packages / SDKs](https://raw.githubusercontent.com/api-evangelist/flic/refs/heads/main/packages/flic-packages.yml)
+- [Cloud Buttons webhooks](https://raw.githubusercontent.com/api-evangelist/flic/refs/heads/main/asyncapi/flic-cloud-buttons-webhooks.yml)
+- [Authentication](https://raw.githubusercontent.com/api-evangelist/flic/refs/heads/main/authentication/flic-authentication.yml)
+- [Conformance](https://raw.githubusercontent.com/api-evangelist/flic/refs/heads/main/conformance/flic-conformance.yml)
+- [Domain security](https://raw.githubusercontent.com/api-evangelist/flic/refs/heads/main/security/flic-domain-security.yml)
+
+## Community & support
+
+- [Community forum](https://community.flic.io/)
+- [Getting started](https://flic.io/start)
+- [Business contact](https://flic.io/business/contact)
+- [GitHub organization](https://github.com/50ButtonsEach)

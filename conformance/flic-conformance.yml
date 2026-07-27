@@ -1,0 +1,26 @@
+generated: '2026-07-19'
+method: derived
+source: asyncapi/flic-cloud-buttons-webhooks.yml
+notes: >-
+  Cross-cutting standards Flic's Cloud Buttons webhook surface conforms to.
+  Derived from the documented webhook JWT model. Flic publishes no OAuth2/OIDC
+  server and no formal compliance program, so no Compliance pointer is emitted.
+standards:
+  - id: rfc7519-jwt
+    conforms: true
+    evidence: Cloud Buttons webhooks deliver a JSON Web Token in the request body.
+  - id: rfc7515-jws
+    conforms: true
+    evidence: The JWT is signed (JWS) with ES256 (ECDSA P-256); public keys published for verification.
+  - id: rfc7517-jwk
+    conforms: true
+    evidence: Verification public key is published in JWK (plus PEM/DER/raw) formats.
+  - id: webhooks-http-post
+    conforms: true
+    evidence: Events delivered as HTTP POST application/json to a customer-configured endpoint.
+  - id: oauth2
+    conforms: false
+  - id: oidc
+    conforms: false
+  - id: rfc9457-problem-details
+    conforms: false

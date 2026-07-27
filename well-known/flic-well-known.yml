@@ -1,0 +1,19 @@
+generated: '2026-07-19'
+method: searched
+host: https://flic.io
+notes: >-
+  Probed the standard /.well-known/ discovery surface on the flic.io host. Flic
+  is a hardware/SDK company with no REST API or OAuth server, so none of these
+  documents are published. Recorded here as an honest negative result; no raw
+  files were saved and no WellKnown/SecurityTxt pointer is wired.
+documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404

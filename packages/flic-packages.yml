@@ -1,0 +1,68 @@
+generated: '2026-07-19'
+method: searched
+source: https://github.com/50ButtonsEach
+notes: >-
+  Flic is a smart-button hardware company. Its developer surface is SDK- and
+  protocol-centric (BLE / Flic 2 protocol) rather than a REST API. All
+  first-party client libraries are published under the 50ButtonsEach GitHub
+  organization. pyflic on PyPI is a community mirror (not first-party).
+packages:
+  - language: swift-objc
+    registry: github
+    name: flic2lib-ios
+    url: https://github.com/50ButtonsEach/flic2lib-ios
+    install: "Add flic2lib.xcframework (download from the repo releases / Wiki tutorial)"
+    official: true
+    description: The Flic 2 and Flic Duo framework for iOS.
+  - language: java
+    registry: jitpack
+    name: com.github.50ButtonsEach:flic2lib-android
+    url: https://github.com/50ButtonsEach/flic2lib-android
+    install: "implementation 'com.github.50ButtonsEach:flic2lib-android:2.+'  (repo: https://jitpack.io)"
+    official: true
+    description: The Flic 2 and Flic Duo SDK for Android (JitPack).
+  - language: c
+    registry: github
+    name: flic2lib-c-module
+    url: https://github.com/50ButtonsEach/flic2lib-c-module
+    install: "Vendor the C module from source"
+    official: true
+    description: C module implementing the Flic 2 protocol for embedded devices.
+  - language: c
+    registry: github
+    name: fliclib-linux-hci
+    url: https://github.com/50ButtonsEach/fliclib-linux-hci
+    install: "Clone and build the Linux HCI daemon + client libraries"
+    official: true
+    description: Flic SDK for Linux (fliclib) with Python/Node/C# client libraries.
+  - language: csharp
+    registry: github
+    name: fliclib-windows
+    url: https://github.com/50ButtonsEach/fliclib-windows
+    install: "Reference the Windows fliclib project from source"
+    official: true
+    description: Flic SDK for Windows.
+  - language: javascript
+    registry: github
+    name: flic-hub-sdk-mqtt-js
+    url: https://github.com/50ButtonsEach/flic-hub-sdk-mqtt-js
+    install: "Load the module in the Flic Hub SDK runtime"
+    official: true
+    description: MQTT client module for the Flic Hub SDK (runs on the Flic Hub).
+  - language: javascript
+    registry: github
+    name: flic-hub-sdk-osc-js
+    url: https://github.com/50ButtonsEach/flic-hub-sdk-osc-js
+    install: "Load the module in the Flic Hub SDK runtime"
+    official: true
+    description: Open Sound Control (OSC) client module for the Flic Hub SDK.
+  - language: python
+    registry: pypi
+    name: pyflic
+    url: https://pypi.org/project/pyflic/
+    install: pip install pyflic
+    official: false
+    description: >-
+      Community PyPI mirror of the Flic Linux Python client (maintainer soldag);
+      the package itself states it exists only until an official PyPI package is
+      published.
