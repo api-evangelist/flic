@@ -1,12 +1,12 @@
 generated: '2026-07-19'
 method: searched
 host: https://flic.io
-notes: >-
-  Probed the standard /.well-known/ discovery surface on the flic.io host. Flic
-  is a hardware/SDK company with no REST API or OAuth server, so none of these
-  documents are published. Recorded here as an honest negative result; no raw
-  files were saved and no WellKnown/SecurityTxt pointer is wired.
-documents:
+notes: Probed the standard /.well-known/ discovery surface on the flic.io host. Flic is a hardware/SDK
+  company with no REST API or OAuth server, so none of these documents are published. Recorded here as
+  an honest negative result; no raw files were saved and no WellKnown/SecurityTxt pointer is wired.
+hosts:
+- host: https://flic.io
+  documents:
   - path: /.well-known/security.txt
     status: 404
   - path: /.well-known/openid-configuration
@@ -17,3 +17,8 @@ documents:
     status: 404
   - path: /.well-known/ai-plugin.json
     status: 404
+x-shape-fix:
+  converted: '2026-08-20'
+  from: documents
+  note: Rewritten into hosts[] -> documents[], the only shape well_known_docs() in score.rb reads. A served
+    .well-known surface recorded in any other shape scores as absent.
