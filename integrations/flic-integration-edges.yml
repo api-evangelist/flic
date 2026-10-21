@@ -1,29 +1,4 @@
 edges:
-- partner_name: Connectivity Standards Alliance (Matter)
-  partner: null
-  type: contract
-  channel: standard-directory
-  relationship: standard-participant
-  direction: partner-built
-  evidence: https://on.dcl.csa-iot.org/dcl/vendorinfo/vendors/5256
-  category: Matter certified products
-  contract_reference:
-    register: CSA Distributed Compliance Ledger (Matter certification)
-    spec_file: null
-    standard: Matter
-    role: Matter vendor ID holder (no certified product)
-    vendor_id: 5256
-    registered_name: Shortcut Labs (Flic)
-    legal_name: Shortcut Labs AB
-    landing_page: https://flic.io
-    identity_source: vendorLandingPageURL
-    matched_domain: flic.io
-    matched_by: domain
-    certified_models: 0
-    certified_products: []
-    signal_note: certified_products = one entry per device type (diversity), not per model
-    detected_by: sweep-iot.py
-    detected: '2026-10-14'
 - partner_name: Zapier
   partner: zapier
   partner_match: aggregator
@@ -49,10 +24,68 @@ edges:
     builder: unknown (not in the directory record)
   detected_by: sweep-workflow-automation.py
   first_seen: '2026-10-15'
+- partner_name: Connectivity Standards Alliance (Matter)
+  partner: null
+  type: contract
+  channel: standard-directory
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://on.dcl.csa-iot.org/dcl/vendorinfo/vendors/5256
+  category: Matter certified products
+  contract_reference:
+    register: CSA Distributed Compliance Ledger (Matter certification)
+    spec_file: null
+    standard: Matter
+    role: Matter vendor ID holder (no certified product)
+    vendor_id: 5256
+    registered_name: Shortcut Labs (Flic)
+    legal_name: Shortcut Labs AB
+    landing_page: https://flic.io
+    identity_source: vendorLandingPageURL
+    matched_domain: flic.io
+    matched_by: domain
+    certified_models: 0
+    certified_products: []
+    signal_note: certified_products = one entry per device type (diversity), not per model
+    detected_by: sweep-iot.py
+    detected: '2026-10-19'
+- partner_name: 500 Global
+  partner: 500-global
+  partner_match: register
+  type: register
+  channel: standard-directory
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://500.co/companies
+  category: accelerator portfolio participation
+  contract_reference:
+    register: 500 Global portfolio (500.co/companies; the page's own JSON 500.co/api/startups)
+    standard: null
+    spec_file: null
+    role: accelerator-portfolio-company
+    registered_name: Flic
+    register_id: https://500.co/companies
+    register_country: Sweden
+    register_website: flic.io
+    matched_domain: flic.io
+    matched_by: domain
+    signal_note: 'participation only: the accelerator''s own portfolio register lists the company (cohort / investment);
+      an ownership and participation record, not conformance or certification'
+    detected_by: sweep-accelerator-portfolios.py
+    detected: '2026-10-21'
+    batch: Distro 1
+    year: '2016'
+  detected_by: sweep-accelerator-portfolios.py
+  first_seen: '2026-10-21'
 generated: '2026-10-14'
 method: searched
 checked:
 - https://on.dcl.csa-iot.org/dcl/vendorinfo/vendors
 - https://zapier.com/api/v4/apps/
+- https://500.co/api/startups
+- https://500.co/companies
+- https://www.antler.co/portfolio
+- https://www.techstars.com/portfolio
+- https://www.ycombinator.com/companies
 source:
 - https://zapier.com/api/v4/apps/
